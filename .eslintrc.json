@@ -3,7 +3,12 @@
 		"browser": true,
 		"es2021": true
 	},
-	"extends": ["plugin:vue/vue3-essential", "plugin:@typescript-eslint/recommended", "eslint-config-prettier"],
+	"extends": [
+		"plugin:vue/vue3-essential",
+		"plugin:@typescript-eslint/recommended",
+		"eslint-config-prettier",
+		"plugin:eslint-plugin-import/recommended"
+	],
 	"overrides": [],
 	"parser": "vue-eslint-parser",
 	"parserOptions": {
@@ -11,7 +16,12 @@
 		"sourceType": "module",
 		"parser": "@typescript-eslint/parser"
 	},
-	"plugins": ["vue", "prettier"],
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	},
+	"plugins": ["vue", "prettier", "eslint-plugin-import"],
 	"rules": {
 		"prettier/prettier": ["error", {}, { "usePrettierrc": true }]
 	}

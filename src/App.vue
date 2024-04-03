@@ -1,7 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div>Main</div>
+	<div>
+		<ExampleComponent msg="te" />
+	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+@import url('./styles/reset.css');
+@import url('./styles/global.css');
+</style>

@@ -1,0 +1,14 @@
+:root {
+	--main-color: #182c4f;
+	--md-color: #4462ff;
+	--primay-color: #638dff;
+
+	/* white & black */
+	--white-color: #fff;
+	--black-color: #000;
+
+	/* gray scale */
+	--gray-color-200: #efefef;
+	--gray-color-500: #949494;
+	--gray-color-500: #777777;
+}
