@@ -2,7 +2,10 @@
 
 <template>
 	<main class="container">
+		<HeaderNav />
+
 		<slot />
+		<FooterBar />
 	</main>
 </template>
 

@@ -11,6 +11,8 @@ declare module 'vue' {
     AtomInput: typeof import('./src/components/atom/AtomInput.vue')['default']
     CommonLayout: typeof import('./src/components/layout/CommonLayout.vue')['default']
     ExampleComponent: typeof import('./src/components/ExampleComponent.vue')['default']
+    FooterBar: typeof import('./src/components/FooterBar.vue')['default']
+    HeaderNav: typeof import('./src/components/HeaderNav.vue')['default']
     InputForm: typeof import('./src/components/molecules/InputForm.vue')['default']
   }
 }

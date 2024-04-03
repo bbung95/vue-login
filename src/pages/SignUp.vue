@@ -22,7 +22,7 @@ const formData = ref({
 			<InputForm title="주소" v-model="formData.address" :isDisabled="true" buttonText="주소찾기" />
 			<InputForm title="비밀번호" v-model="formData.password" placeholder="비밀번호 입력" />
 		</div>
-		<div class="agreement-form">dsds</div>
+		<!-- <div class="agreement-form">dsds</div> -->
 	</div>
 </template>
 
@@ -31,16 +31,15 @@ const formData = ref({
 	max-width: 610px;
 	width: 100%;
 
-	margin: 0 auto;
+	margin: 200px auto 193px;
 	padding: 0 20px;
 
 	& > h1 {
 		margin: 0;
 		margin-bottom: 80px;
 
-		text-align: center;
-
 		font-size: 40px;
+		text-align: center;
 	}
 }
 
@@ -56,6 +55,7 @@ const formData = ref({
 
 .agreement-form {
 	width: 100%;
+
 	background-color: var(--lt-color);
 }
 </style>
