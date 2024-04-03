@@ -10,12 +10,13 @@
 $media-tablet: 768px;
 $media-mobile: 578px;
 .container {
-	max-width: var(--media-desktop);
+	min-width: var(--min-width);
+	/* max-width: var(--max-width); */
 	width: 100%;
 	height: 100vh;
 
 	margin: 0 auto;
-	background-color: aqua;
+	background-color: var(--white-color);
 
 	@media (max-width: #{$media-tablet}) {
 		background-color: red;

@@ -1,7 +1,9 @@
 :root {
 	--main-color: #182c4f;
 	--md-color: #4462ff;
+	--lt-color: #f5f7fa;
 	--primay-color: #638dff;
+	--error-color: #ff485d;
 
 	/* white & black */
 	--white-color: #fff;
@@ -16,9 +18,15 @@
 	--media-desktop: 1024px;
 	--media-tablet: 768px;
 	--media-mobile: 578px;
+
+	/* screen max, min width */
+	--min-width: 375px;
+	--max-width: 1200px;
 }
 
 * {
 	box-sizing: border-box;
+
+	font-family: Pretendard;
 	font-size: 10px;
 }
