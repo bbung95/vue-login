@@ -11,4 +11,14 @@
 	--gray-color-200: #efefef;
 	--gray-color-500: #949494;
 	--gray-color-500: #777777;
+
+	/* media size */
+	--media-desktop: 1024px;
+	--media-tablet: 768px;
+	--media-mobile: 578px;
+}
+
+* {
+	box-sizing: border-box;
+	font-size: 10px;
 }

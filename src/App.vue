@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SignUp from './pages/SignUp.vue';
+</script>
 
 <template>
-	<div>
-		<ExampleComponent msg="te" />
-	</div>
+	<CommonLayout>
+		<SignUp />
+	</CommonLayout>
 </template>
 
 <style lang="scss">
