@@ -1,25 +1,41 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { Form } from 'vee-validate';
+import * as Yup from 'yup';
 
-const signFormRef = ref(null);
+import { ID_REGEX, PHONE_REGEX, SIGNUP_MESSAGE } from '@/constants/form';
 
-const handleSignSubmit = async (value: unknown) => {
-	console.log(value);
+const koreanErrorMessages = {
+	mixed: {
+		default: '잘못된 값입니다.',
+		required: '필수 입력 항목입니다.',
+	},
 };
+Yup.setLocale(koreanErrorMessages);
 
-const handleOnSubmit = () => {
-	// console.log(signFormRef.vaㅌ/lue.submit());
+const schema = Yup.object().shape({
+	id: Yup.string().matches(ID_REGEX, SIGNUP_MESSAGE.ID).min(8, SIGNUP_MESSAGE.ID).max(16, SIGNUP_MESSAGE.ID).required(),
+	name: Yup.string().required(),
+	email: Yup.string().email(SIGNUP_MESSAGE.EMAIL).required(),
+	phone: Yup.string().matches(PHONE_REGEX, SIGNUP_MESSAGE.PHONE).required(),
+	// address: Yup.string().required(),
+	password: Yup.string().min(8, SIGNUP_MESSAGE.PASSWORD).max(16, SIGNUP_MESSAGE.PASSWORD).required(),
+	confirm_password: Yup.string().required(),
+});
+
+const handleOnSubmit = (values: unknown) => {
+	console.log(values);
 };
 </script>
 
 <template>
 	<div class="signup-container">
 		<h1>회원 가입</h1>
-		<SignForm @submut="handleSignSubmit" ref="signFormRef" />
-		<!-- <div class="agreement-form">dsds</div> -->
+		<Form :validation-schema="schema" @submit="handleOnSubmit">
+			<SignForm />
+			<AgreementForm />
+			<SignupButton />
+		</Form>
 	</div>
-
-	<SignupButton @click="handleOnSubmit" />
 </template>
 
 <style lang="scss" scoped>
@@ -37,11 +53,5 @@ const handleOnSubmit = () => {
 		font-size: 40px;
 		text-align: center;
 	}
-}
-
-.agreement-form {
-	width: 100%;
-
-	background-color: var(--lt-color);
 }
 </style>

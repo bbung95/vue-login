@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AgreementForm: typeof import('./src/components/organism/AgreementForm.vue')['default']
     AtomButton: typeof import('./src/components/atom/AtomButton.vue')['default']
     AtomInput: typeof import('./src/components/atom/AtomInput.vue')['default']
     CommonLayout: typeof import('./src/components/layout/CommonLayout.vue')['default']
