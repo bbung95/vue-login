@@ -14,5 +14,7 @@ declare module 'vue' {
     FooterBar: typeof import('./src/components/FooterBar.vue')['default']
     HeaderNav: typeof import('./src/components/HeaderNav.vue')['default']
     InputForm: typeof import('./src/components/molecules/InputForm.vue')['default']
+    SignForm: typeof import('./src/components/organism/SignForm.vue')['default']
+    SignupButton: typeof import('./src/components/SignupButton.vue')['default']
   }
 }

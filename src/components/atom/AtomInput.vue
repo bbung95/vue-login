@@ -1,7 +1,9 @@
 <script setup lang="ts">
 export interface Props {
-	isDisabled?: boolean;
+	name: string;
 	placeholder?: string;
+	isDisabled?: boolean;
+	isError?: boolean;
 }
 
 const modelValue = defineModel();
@@ -11,7 +13,15 @@ const placeholder = props.isDisabled ? '' : props.placeholder;
 </script>
 
 <template>
-	<input class="input" :placeholder="placeholder" v-model="modelValue" :disabled="isDisabled" />
+	<input
+		class="input"
+		:class="{ error: isError }"
+		:id="props.name"
+		:name="props.name"
+		:placeholder="placeholder"
+		:disabled="isDisabled"
+		v-model="modelValue"
+	/>
 </template>
 
 <style lang="scss" scoped>
@@ -34,9 +44,14 @@ const placeholder = props.isDisabled ? '' : props.placeholder;
 		color: var(--gray-color-500);
 		font-size: 1.8rem;
 	}
-
 	&:disabled {
 		background-color: var(--gray-color-200);
+	}
+	&:focus {
+		border: 1px solid var(--md-color);
+	}
+	&.error {
+		border: 1px solid var(--error-color);
 	}
 }
 </style>

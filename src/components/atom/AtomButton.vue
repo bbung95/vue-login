@@ -1,5 +1,6 @@
 <script setup lang="ts">
 export interface Props {
+	text?: string;
 	handleOnClick?: () => void;
 }
 
@@ -7,7 +8,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-	<button class="button" @click="props.handleOnClick"><slot>버튼</slot></button>
+	<button type="button" class="button" @click="props.handleOnClick">{{ props.text ?? '버튼' }}</button>
 </template>
 
 <style lang="scss" scoped>
