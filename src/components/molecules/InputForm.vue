@@ -18,6 +18,7 @@ const props = defineProps<Props>();
 		<div class="input-wrapper">
 			<AtomInput
 				v-model="modelValue"
+				:type="props.type"
 				:name="props.name"
 				:placeholder="props.placeholder"
 				:isDisabled="props.isDisabled"

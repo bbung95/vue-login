@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { Field } from 'vee-validate';
+
+const props = defineProps<{ value: unknown }>();
+
+console.log(props.value);
 </script>
 
 <template>
 	<div class="signup-form">
-		<Field name="id" v-slot="{ field, errorMessage, meta }">
+		<Field name="id" v-slot="{ field, errorMessage, meta }" :validateOnChange="false">
 			<InputForm
 				title="아이디"
 				v-bind="field"
@@ -56,6 +60,7 @@ import { Field } from 'vee-validate';
 		<Field name="password" v-slot="{ field, errorMessage, meta }">
 			<InputForm
 				title="비밀번호"
+				type="password"
 				v-bind="field"
 				placeholder="비밀번호 입력"
 				:error-message="errorMessage"
@@ -65,6 +70,7 @@ import { Field } from 'vee-validate';
 		<Field name="confirm_password" v-slot="{ field, errorMessage, meta }">
 			<InputForm
 				class="confirm-password"
+				type="password"
 				v-bind="field"
 				placeholder="비밀번호 확인"
 				:error-message="errorMessage"
@@ -76,9 +82,8 @@ import { Field } from 'vee-validate';
 
 <style lang="scss" scoped>
 .signup-form {
+	max-width: 610px;
 	width: 100%;
-
-	padding-bottom: 80px;
 
 	display: flex;
 	flex-direction: column;
@@ -105,5 +110,13 @@ import { Field } from 'vee-validate';
 	font-size: 1.8rem;
 	font-weight: 500;
 	line-height: 2.1rem;
+}
+
+@media (max-width: 578px) {
+	.signup-form {
+		& > div {
+			margin-top: 20px;
+		}
+	}
 }
 </style>

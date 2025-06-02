@@ -46,13 +46,12 @@ import { Field } from 'vee-validate';
 
 <style lang="scss" scoped>
 .agreement-form {
+	max-width: 610px;
 	width: 100%;
-
-	background-color: var(--lt-color);
 }
 
 .article-group {
-	margin: 80px 0;
+	margin-bottom: 80px;
 
 	& > .title {
 		margin: 0 0 40px 0;

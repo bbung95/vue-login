@@ -28,5 +28,11 @@
 	box-sizing: border-box;
 
 	font-family: Pretendard;
-	font-size: 10px;
+	font-size: 62.5%;
+}
+
+@media (max-width: 578px) {
+	* {
+		font-size: 9px;
+	}
 }

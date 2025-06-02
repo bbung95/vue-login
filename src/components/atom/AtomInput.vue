@@ -1,6 +1,7 @@
 <script setup lang="ts">
 export interface Props {
 	name: string;
+	type?: string;
 	placeholder?: string;
 	isDisabled?: boolean;
 	isError?: boolean;
@@ -16,6 +17,7 @@ const placeholder = props.isDisabled ? '' : props.placeholder;
 	<input
 		class="input"
 		:class="{ error: isError }"
+		:type="props.type ?? 'text'"
 		:id="props.name"
 		:name="props.name"
 		:placeholder="placeholder"
